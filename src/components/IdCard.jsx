@@ -1,18 +1,15 @@
-
+import React from 'react';
 
 function IdCard(props) {
-  console.log(props);
- let {user} = props
   return (
-    <div>
-    <img src="" alt="" />
-      <div>
-        <p>First name: {user.firstName}</p>
-        <p>Last name:{user.lastName}</p>
-        <p>Gender: {user.gender}</p>
-        <p>Height: {user.height}</p>
-        <p>Birth: {user.birth}</p>
-        <p></p>
+    <div style={{border:"1px solid",margin:"50px auto", width:"80%", height:"50%",display:"flex" }}>
+      <img src={props.picture} alt="id-pic" height="250vh" style={{margin:"auto 10px"}}/>
+      <div style={{display:"flex", flexDirection:"column", textAlign:"start"}}>
+        <p>First Name: {props.firstName}</p>
+        <p>Last Name: {props.lastName}</p>
+        <p>Gender: {props.gender}</p>
+        <p>Height: {props.height}</p>
+        <p>Birth: {props.birth.toDateString()}</p>
       </div>
     </div>
   );
