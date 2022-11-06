@@ -5,18 +5,23 @@ import Mastercard from '../assets/images/visa.png'
 
 
 function CreditCard(props) {
-    console.log(props.type)
+const {type, number, expirationMonth, expirationYear, bank, owner, bgColor} = props
+  let codedNumber = ""
+
+  for (let i = 0; i < number.length -4; i++) {
+    codedNumber += "*"
+  }
 
   return (
-    <div style={{ border: '1px solid', backgroundColor: props.bgColor, color: props.color, width:"20%", display:"flex", flexDirection:"column" }}>
-      <img src={props.type === "Visa" ? Visa : Mastercard} alt="" width="30px"/>
-      <p>{props.number}</p>
+    <div style={{ border: '1px solid', backgroundColor: bgColor, color: props.color, width:"20%", display:"flex", flexDirection:"column" }}>
+      <img src={type === "Visa" ? Visa : Mastercard} alt="" width="30px"/>
+      <p>{codedNumber + number.slice(-5)}</p>
       <div style={{display:"flex", margin:"0 40px"}}>
-        <p>{props.expirationMonth}/</p>
-        <p>{props.expirationYear}</p>
-        <p>{props.bank}</p>
+        <p>{expirationMonth}/</p>
+        <p>{expirationYear}</p>
+        <p>{bank}</p>
       </div>
-      <p>{props.owner}</p>
+      <p>{owner}</p>
 
     </div>
   );

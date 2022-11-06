@@ -1,6 +1,5 @@
 
 import './App.css';
-import UserData from './data/berlin.json';
 import IdCard from './components/IdCard';
 import Greetings from './components/Greetings';
 import Random from './components/Random';
@@ -8,6 +7,9 @@ import BoxColor from './components/BoxColor';
 import CreditCard from './components/CreditCard';
 import Rating from './components/Rating';
 import DriverCard from './components/DriverCard';
+import LikeButton from './components/LikeButton';
+import ClickablePicture from './components/ClickablePicture';
+import Dice from './components/Dice';
 
 function App() {
   return (
@@ -96,8 +98,15 @@ function App() {
     licensePlate: "BE33ER"
   }}
 />
+<LikeButton />
+
+<ClickablePicture />
+
+<Dice />
     </div>
   );
+
+
 }
 
 export default App;
